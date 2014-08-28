@@ -1,0 +1,20 @@
+{
+  "esnext": true,
+  "asi": true,
+  "eqeqeq": false,
+  "immed": true,
+  "indent": 2,
+  "sub": true,
+  "latedef": "nofunc",
+  "newcap": true,
+  "noarg": true,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true,
+  "strict": true,
+  "trailing": true,
+  "jquery": true,
+  "globals": {
+    "define": false
+   }
+}

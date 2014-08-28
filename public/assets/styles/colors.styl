@@ -1,0 +1,83 @@
+//@require 'neapolitan'
+
+theme = {}
+
+theme.bright_magenta = lch(72 35 350)
+theme.bright_red     = lch(72 35  25)
+theme.bright_yellow  = lch(72 35  90)
+theme.bright_green   = lch(72 35 130)
+theme.bright_cyan    = lch(72 35 210)
+theme.bright_blue    = lch(72 35 265)
+theme.bright_violet  = lch(72 35 320)
+
+theme.magenta = lch(58 34 350)
+theme.red     = lch(58 34  25)
+theme.yellow  = lch(58 34  88)
+theme.green   = lch(58 34 130)
+theme.cyan    = lch(58 34 210)
+theme.blue    = lch(58 34 265)
+theme.violet  = lch(58 34 320)
+
+theme.dark_magenta = lch(47 28 350)
+theme.dark_red     = lch(47 28  25)
+theme.dark_yellow  = lch(47 28  90)
+theme.dark_green   = lch(47 28 130)
+theme.dark_cyan    = lch(47 28 210)
+theme.dark_blue    = lch(47 28 265)
+theme.dark_violet  = lch(47 28 320)
+
+theme.base03  = lch(30  9 200)
+theme.base02  = lch(35 10 190)
+theme.base01  = lch(45 11 175)
+theme.base00  = lch(55 12 160)
+theme.base0   = lch(65 12 150)
+theme.base1   = lch(75 11 145)
+theme.base2   = lch(85 10 130)
+theme.base3   = lch(90  9 120)
+
+for name, color in theme
+  .{name}.swatch
+    background-color: color
+  .{name}.text
+    color: color
+
+html
+  background-color: theme.base03
+  color: theme.base0
+
+.title
+  color: theme.base01
+
+.group
+  &:after
+    content: ""
+    display: table
+    clear: both
+.text
+  display: block
+  float: left
+  text-align: center
+
+.swatch
+  position: relative
+  display: block
+  width: 20%
+  padding-bottom: 20%
+  float: left
+  text-align: center
+  &:after
+    display: block
+    width: 100%
+    position: absolute
+
+.col7 .text
+  width: (100/7)%
+.col8 .text
+  width: (100/8)%
+.col7 .swatch
+  width: (100/7)%
+  padding-bottom: (100/7)%
+.col8 .swatch
+  width: (100/8)%
+  padding-bottom: (100/8)%
+

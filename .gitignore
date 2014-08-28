@@ -1,0 +1,25 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.ai
+
+pids
+logs
+
+# in case we decide to use sass
+.sass-cache
+
+# preprocessor files only
+*.css
+
+# Node stuff
+npm-debug.log
+node_modules/
+
+# Mac stuff
+.DS_Store
