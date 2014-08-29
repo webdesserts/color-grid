@@ -18,9 +18,9 @@ describe('Group', function() {
       group.defaults.should.be.deep.equal({h: 12, c: 30})
     })
 
-    it('accepts a hue only', function() {
+    it('accepts a hue by itself', function() {
       var group = new Group({h: 12})
-      group.defaults.should.be.deep.equal({h: 12, c: 0})
+      group.defaults.should.be.deep.equal({h: 12, c: null})
     })
   })
 

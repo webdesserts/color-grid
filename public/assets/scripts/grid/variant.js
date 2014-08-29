@@ -8,7 +8,7 @@ define(function(require) {
   var Group
 
   var ColorVariant = function(opts) {
-    var no_color = {l: 0, c: 0}
+    var no_color = {l: null, c: null}
     this.groups = []
     this.colors = []
     this.defaults = _.merge(no_color, opts) || no_color

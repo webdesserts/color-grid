@@ -20,7 +20,7 @@ describe('Variant', function() {
 
     it('accepts a lightness only', function() {
       var variant = new Variant({l: 12})
-      variant.defaults.should.be.deep.equal({l: 12, c: 0})
+      variant.defaults.should.be.deep.equal({l: 12, c: null})
     })
   })
 

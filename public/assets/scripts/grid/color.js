@@ -10,8 +10,12 @@ define(['require', 'lodash', 'chroma'], function(require, lodash, chroma) {
     var Group = (Group || require('grid/group'))
     if (!Group.isGroup(group)) throw TypeError('Color expects a Group');
     if (!Variant.isVariant(variant)) throw TypeError('Color expects a Variant');
-    var lch_obj = _.merge({}, variant.defaults, group.defaults)
-    var lch = _.map('lch', function(value, i) { return lch_obj[value] })
+    var g = group.defaults
+    var v = variant.defaults
+    var lch = []
+    lch[0] = v.l || 0
+    lch[1] = g.c || v.c || 0
+    lch[2] = g.h || 0
     var chroma_color = new chroma._Color(lch, 'lch')
     var clipped = chroma.rgb(chroma_color.rgb()).lch()
     chroma_color.out_of_bounds = false
