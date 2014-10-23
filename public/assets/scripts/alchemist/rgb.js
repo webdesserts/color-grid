@@ -4,9 +4,9 @@ define(function (require) {
 
   RGB = function (r, g, b) {
     if (!RGB.inBounds(r, g, b)) { return null }
-    this.r = r
-    this.g = g
-    this.b = b
+    this.r = r / 255
+    this.g = g / 255
+    this.b = b / 255
   }
 
   RGB.inBounds = function (r, g, b) {
@@ -23,21 +23,17 @@ define(function (require) {
   }
 
   RGB.prototype.xyz = function() {
-    var r = this.invCompand(this.r)
-    var g = this.invCompand(this.g)
-    var b = this.invCompand(this.b)
+    var r = this.inverseCompand(this.r)
+    var g = this.inverseCompand(this.g)
+    var b = this.inverseCompand(this.b)
     var x = r * 0.4124564 + g * 0.3575761 + b * 0.1804375
     var y = r * 0.2126729 + g * 0.7151522 + b * 0.0721750
     var z = r * 0.0193339 + g * 0.1191920 + b * 0.9503041
     return [x, y, z]
   }
 
-  RGB.prototype.invCompand = function(V) {
-    if (V <= 0.04045) {
-      return V / 12.92
-    } else {
-      return Math.pow((V + 0.055) / 1.055, 2.4)
-    }
+  RGB.prototype.inverseCompand = function(companded) {
+    return (companded <= 0.04045) ? (companded / 12.92) : Math.pow((companded + 0.055) / 1.055, 2.4);
   }
 
   return RGB

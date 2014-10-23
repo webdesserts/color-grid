@@ -84,12 +84,20 @@ define(function(require) {
 
         })
       })
+      describe('xyz()', function() {
+        it('should correctly convert rgb to xyz', function() {
+          var rgb = new RGB(100, 100, 100)
+          var xyz = rgb.xyz()
+          expect(xyz[0]).to.be.closeTo(0.121126, 0.001)
+          expect(xyz[1]).to.be.closeTo(0.127438, 0.001)
+          expect(xyz[2]).to.be.closeTo(0.138758, 0.001)
+        })
+      })
       describe('lab()', function() {
         it('should correctly convert rgb to lab', function() {
-          rgb = new RGB(0.1, 0.1, 0.1)
-          lab = rgb.lab()
-          console.log(rgb.xyz())
-          expect(lab[0]).to.be.closeTo(42, 0.001)
+          var rgb = new RGB(100, 100, 100)
+          var lab = rgb.lab()
+          expect(lab[0]).to.be.closeTo(42.3746, 0.001)
           expect(lab[1]).to.be.closeTo(0, 0.001)
           expect(lab[2]).to.be.closeTo(0, 0.001)
         })
