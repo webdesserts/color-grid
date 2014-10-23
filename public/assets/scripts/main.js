@@ -8,7 +8,7 @@ define(function (require) {
 
   var grid = new Grid()
 
-  theme(grid)
+  theme()
 
   window.Color = require('grid/color')
   window.grid = grid

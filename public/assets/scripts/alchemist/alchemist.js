@@ -1,21 +1,13 @@
 /* Alchemist is a color convertor built around the Lab color space */
 
 define(function(require) {
+  var LAB = require('alchemist/lab')
 
-  alchemy = function(l, a, b) {
-    return new CIELAB(l, a, b)
+  var Alchemist = function(options) {
+    this.white = options.white || 'D65'
   }
 
-  alchemy.CIELAB = CIELAB
+  Alchemist.LAB = LAB
 
-  function CIELAB (l, a, b) {
-    if (!CIELAB.inBounds(l, a, b)) return null
-    this.lab = [l, a, b]
-  }
-
-  CIELAB.inBounds = function(l, a, b) {
-    return !(l < 0 || 100 < l)
-  }
-
-  return alchemy
+  return Alchemist
 })

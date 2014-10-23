@@ -5,7 +5,6 @@ var g = require('gulp-load-plugins')()
 var series = require('run-sequence')
 var _ = require('lodash')
 
-
 var browserSync = require('browser-sync')
 var reload = browserSync.reload
 
